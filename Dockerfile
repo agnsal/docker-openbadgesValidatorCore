@@ -4,8 +4,8 @@ FROM ubuntu:20.04
 
 MAINTAINER Agnese Salutari
 
-RUN apt-get update
-RUN apt-get upgrade
+RUN apt-get update && apt-get -y upgrade
+RUN apt --fix-broken install && apt-get -y install wget
 RUN wget https://www.python.org/ftp/python/3.9.4/Python-3.9.4.tgz && tar xzf Python-3.9.4.tgz && cd Python-3.9.4
 RUN ./configure --enable-optimizations && make altinstall
 RUN rm -f /opt/Python-3.9.4.tgz 
