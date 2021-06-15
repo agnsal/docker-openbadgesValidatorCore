@@ -5,13 +5,10 @@ FROM ubuntu:20.04
 MAINTAINER Agnese Salutari
 
 RUN apt-get update && apt-get -y upgrade
-RUN apt --fix-broken install && apt-get -y install wget
-RUN wget https://www.python.org/ftp/python/3.9.4/Python-3.9.4.tgz && tar xzf Python-3.9.4.tgz && cd Python-3.9.4
-RUN ./configure --enable-optimizations && make altinstall
-RUN rm -f /opt/Python-3.9.4.tgz 
+RUN apt --fix-broken install && apt-get -y install python3.9
 RUN python3.9 -m pip install Flask
-RUN git clone https://github.com/IMSGlobal/openbadges-validator-core.git && cd openbadges-validator-core
-RUN python3.9 -m pip install -r requirements.txt
+RUN apt-get install git && git clone https://github.com/IMSGlobal/openbadges-validator-core.git
+RUN cd openbadges-validator-core && python3.9 -m pip install -r requirements.txt
 RUN python3.9 openbadges/verifier/server/app.py
 
 EXPOSE 5000
