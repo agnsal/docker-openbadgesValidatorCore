@@ -9,7 +9,7 @@ docker pull agnesesalutari/docker-openbadgesvalidatorcore
 ```
 2. To run the container (you have tu use this command for the very first time you run the container only):
 ```sh
-docker run -it agnesesalutari/docker-openbadgesvalidatorcore --name="OVC"
+docker run -it --name="OVC" agnesesalutari/docker-openbadgesvalidatorcore
 ```
  3. To stop the container:
 ```sh
