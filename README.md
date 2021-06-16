@@ -15,7 +15,7 @@ docker run -it --name="OVC" agnesesalutari/docker-openbadgesvalidatorcore
 ```sh
 docker stop "OVC"
 ```
- 4. Tu run the container again:
+ 4. To run the container again:
 ```sh
 docker start "OVC"
 ```
