@@ -10,4 +10,4 @@ RUN apt-get -y install git && git clone https://github.com/IMSGlobal/openbadges-
 RUN python3.9 -m pip install openbadges[server] && python3.9 -m pip install -r openbadges-validator-core/requirements.txt
 CMD ["python3.9", "openbadges-validator-core/openbadges/verifier/server/app.py"]
 
-EXPOSE 5000
+EXPOSE 5000/tcp
