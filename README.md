@@ -23,6 +23,10 @@ docker start "OVC"
 ```sh
 docker exec -it "OVC" bash
 ```
+6. To run the app:
+```sh
+python3.9 openbadges-validator-core/openbadges/verifier/server/app.py
+```
 
 ## Contacts
 
